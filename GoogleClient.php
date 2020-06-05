@@ -29,7 +29,7 @@ class GoogleClient
             //  Checking current access token is expired
             if($this->client->isAccessTokenExpired()){
                 // Refresh access token and add it into session
-                $client->refreshToken($_SESSION['GOOGLE_REFRESH_TOKEN']);
+                $this->client->refreshToken($_SESSION['GOOGLE_REFRESH_TOKEN']);
                 $access_token = $this->client->getAccessToken();
                 $_SESSION['GOOGLE_ACCESS_TOKEN'] = $access_token;
             }
